@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.EmployeeDao">
+
+    <select id="list" resultType="employee">
+        select * from employee
+    </select>
+
+    <insert id="add" parameterType="employee">
+        insert into employee(name,age,createTime,state,password,role)
+        values(#{name},#{age},now(),#{state},#{password},1)
+    </insert>
+
+</mapper>
